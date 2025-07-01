@@ -7,7 +7,10 @@ require_once 'Model/Livre.php'; // Charge la classe livre
 $petitPrince = new Livre(); //Ceci est un objet issue de la classe Livre
 
 $petitPrince 
-->setTitre('Le Petit Prince')
+->setNom('Le Petit Prince') //Méthode du parent Produit
+->setPrix(8) //Méthode du parent Produit
+->setDescription('Le Petit Prince est un roman') //Méthode du parent Produit
+->setCategorie('Fantastique') //Méthode du parent Produit
 ->setnbPage(128)
 ->setAuteur('Antoine de St-Exupéry')
 ->setEdition('Gallimard')
@@ -21,10 +24,33 @@ $user = new Utilisateur();
 $user
 -> setNom('Alice')
 -> setEmail('alice@email.com')
--> setIdentifiant(1)
+-> setIdentifiant('aliceAlice')
 -> setDateInscription(new \DateTime('1988-01-01')) // Les dates sont des objets
 ;
 
-echo 'Le livre nommé ' . $petitPrince->getTitre() . ' est entre les mains de ' . $user->getNom();
+echo 'Le livre nommé ' . $petitPrince->getNom() . ' est entre les mains de ' . $user->getNom();
+echo 'Le livre coûte ' . $petitPrince->getPrixEuro() . '<br>';
+var_dump($petitPrince);
 
-// var_dump($user);
+require_once 'Exos/Admin.php';
+
+$admin = new Admin();
+
+$admin
+->setNom('Durand')
+->setPrenom('Paul')
+->setEmail('paul@admin.com')
+->setNiveauAcces('Haute');
+
+require_once 'Exos/Subscriber.php';
+
+$subscriber = new Subscriber;
+
+$subscriber
+->setNom('Dupont')
+->setPrenom('Charlie')
+->setEmail('charlie@email.com')
+->setAbonnement('Prime');
+
+var_dump($admin);
+var_dump($subscriber);
