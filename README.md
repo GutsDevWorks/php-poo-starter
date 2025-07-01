@@ -1,6 +1,8 @@
 # php-poo-starter
 Dépôt dédié au cours de PHP POO
 
+Projet : https://drawsql.app/teams/agiliteach/diagrams/notebook
+
 # Premier pas avec la POO
 
 La programmation orientée objet est basé sur un système qu'on appelle 'les classes'. 
@@ -70,3 +72,19 @@ $bouquin
 //...
 ;
 ```
+
+## Le projet d'initialisation
+
+Afin de prendre en main la POO, on créer une application simple de prise de notes : NoteBook.
+
+### Scénarios (User Stories)
+
+| Rôle (En tant que) | Action (Je veux)    | Résultat (Afin de) |
+| ---                | ---                 | ---                |
+| Utilisateur        | Créer une note      | La conserver       |
+| Utilisateur        | Modifier une note   | La mettre a jour   |
+| Utilisateur        | Accéder à une note  | La consulter       |
+| Utilisateur        | Spprimer une note   | La détruire        |
+
+Grâce à cela, il est plus simple pour nous de comprendre les objectifs de notre application.
+Cela facilitera sa conception dans une approche plus réaliste.
