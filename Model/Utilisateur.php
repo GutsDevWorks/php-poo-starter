@@ -1,6 +1,7 @@
 <?php
 
-class Utilisateur {
+
+class Utilisateur  {
     public $nom;
     public $email;
     public $identifiant;
@@ -49,7 +50,7 @@ class Utilisateur {
     /**
      * Get the value of identifiant
      */ 
-    public function getIdentifiant(): int
+    public function getIdentifiant(): string
     {
         return $this->identifiant;
     }
@@ -59,7 +60,7 @@ class Utilisateur {
      *
      * @return  self
      */ 
-    public function setIdentifiant($identifiant): Utilisateur
+    public function setIdentifiant(string $identifiant): Utilisateur
     {
         $this->identifiant = $identifiant;
 

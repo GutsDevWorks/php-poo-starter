@@ -1,31 +1,14 @@
 <?php
 
-class Livre {
-    private $titre;
+require_once 'Produits.php'; // import de la classet Produit
+
+//Transforme la classe Livre en enfant de la classe Produit
+class Livre extends Produits {
     private $nbPage;
     private $auteur;
     private $edition;
-    private $isbn;
+    private $isbn = 'Non renseigné';
 
-    /**
-     * Get the value of titre
-     */ 
-    public function getTitre(): string
-    {
-        return $this->titre;
-    }
-
-    /**
-     * Set the value of titre
-     *
-     * @return  self
-     */ 
-    public function setTitre(string $titre): Livre
-    {
-        $this->titre = $titre;
-
-        return $this;
-    }
 
     /**
      * Get the value of nbPage
