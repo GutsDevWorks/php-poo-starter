@@ -1,55 +1,53 @@
 <?php
 
-class Router {
-    //Propriétés
+class Router
+{
+
+    // Propriétés
     private string $request;
 
-    //Constructeur
+    // Constructeur
     public function __construct()
     {
-        $this->request = $_SERVER['REQUEST_METHOD']; // Récupère la méthode de la requête HTTP
+        $this->request = $_SERVER["REQUEST_METHOD"]; // Récupère la méthode HTTP
     }
 
-    // Vérification de la méthode HTTP
-
-    public function handleRequest() {
-        switch ($this->request) {
+    public function handleRequest()
+    {
+        switch ($this->request) { // On vérifie la méthode HTTP
             case 'GET': // En cas de requête GET
                 return $this->getRequest();
                 break;
-            
             case 'POST': // En cas de requête POST
-                return 'Requête POST effectuée';
+                return "Requête POST effectuée";
                 break;
-            
             default: // Pour tout autre cas en dehors de GET et POST
-                return 'Requête non autorisée';
+                return "Requête non autorisée";
                 break;
         }
     }
 
-    public function getRequest() {
+    public function getRequest()
+    {
+        $uri = 'Views/pages' . $_SERVER["REQUEST_URI"]; // ça donne par exmp : "Views/pages/accueil"
 
-        $uri = 'Views/pages' . $_SERVER['REQUEST_URI'];
-        
-        if($_SERVER['REQUEST_URI'] == '/') { // Onviréfie si l'URI est = à '/'
-            return $uri .'accueil.html.php'; // Si oui on renvoie a la page accueil
-        } else {
-            return $this->getPage($_SERVER['REQUEST_URI']); // Sinon on vérifie que le template existe
+        if($_SERVER["REQUEST_URI"] == '/') { // On vérifie si l'URI est "/"
+            return $uri . 'accueil.html.php'; // Si oui, on renvoie la page d'accueil
+        } else { // Sinon, on vérifie si le template existe
+            return $this->getPage($_SERVER["REQUEST_URI"]);
         }
     }
 
-    public function getPage($uri) {
-        $path = 'Views/pages' . $uri. '.html.php';
+    public function getPage($uri)
+    {
+        $path = 'Views/pages' . $uri . '.html.php'; // On crée le chemin du template
 
-        if(file_exists($path)) { // Si me template existe
+        if (file_exists($path)) { // Si le template existe
             return $path; // Inclut la page correspondante
         } else {
-            http_response_code(404); //Retourne une erreur 404
-            return 'Views/pages/404.html.php'; // Inclut la page 404 si le template n'existe pas 
+            http_response_code(404); // Retourne une erreur 404
+            return 'Views/pages/404.html.php'; // Inclut la page 404 si le template n'existe pas
         }
     }
 }
-
-
-//Ne rien ecrire après cette accolade.
+// Ne rien écrire après cette accolade
