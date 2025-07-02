@@ -1,10 +1,15 @@
 <?php
 
-require_once 'Model/Livre.php'; // Charge la classe Livre
-require_once 'Model/Utilisateur.php'; // Charge la classe Utilisateur
+require_once 'Controller/Router.php'; // Charge le router
 
-include 'Views/header.html.php'; // Inclut le navbar
+include_once 'Views/header.html.php'; // Inclut le header
 
-echo '<h1>En cours de conception</h1>';
+$router = new Router(); // Crée une instance du routeur
+include_once $router->getRequest();
 
-include 'Views/footer.html.php'; // Inclut le footer
+
+
+
+// var_dump($router); // Affiche les informations du routeur
+
+include_once 'Views/footer.html.php'; // Inclut le footer
