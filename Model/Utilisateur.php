@@ -1,11 +1,38 @@
 <?php
 
+namespace Model;
 
-class Utilisateur  {
-    public $nom;
-    public $email;
-    public $identifiant;
-    public $dateInscription;
+class Utilisateur
+{
+    // Les propriétés de la classe (variables)
+    private int $id;
+    private string $nom;
+    private string $email;
+    private string $mot_de_passe;
+    private string $photo;
+
+    // Les méthodes de la classe (fonctions)
+
+/**
+     * Get the value of id
+     *
+     * @return int
+     */
+    public function getId(): int {
+        return $this->id;
+    }
+
+    /**
+     * Set the value of id
+     *
+     * @param int $id
+     *
+     * @return self
+     */
+    public function setId(int $id): self {
+        $this->id = $id;
+        return $this;
+    }
 
     /**
      * Get the value of nom
@@ -17,7 +44,6 @@ class Utilisateur  {
 
     /**
      * Set the value of nom
-     *
      * @return  self
      */ 
     public function setNom(string $nom): Utilisateur
@@ -48,42 +74,41 @@ class Utilisateur  {
     }
 
     /**
-     * Get the value of identifiant
+     * Get the value of mdp
      */ 
-    public function getIdentifiant(): string
+    public function getMdp(): string
     {
-        return $this->identifiant;
+        return $this->mot_de_passe;
     }
 
     /**
-     * Set the value of identifiant
+     * Set the value of mdp
      *
      * @return  self
      */ 
-    public function setIdentifiant(string $identifiant): Utilisateur
+    public function setMdp(string $mot_de_passe): Utilisateur
     {
-        $this->identifiant = $identifiant;
-
+        $this->mot_de_passe = $mot_de_passe;
         return $this;
     }
 
     /**
-     * Get the value of dateInscription
-     */ 
-    public function getDateInscription()
-    {
-        return $this->dateInscription;
+     * Get the value of photo
+     */
+    public function getPhoto() {
+        return $this->photo;
     }
 
     /**
-     * Set the value of dateInscription
-     *
-     * @return  self
-     */ 
-    public function setDateInscription($dateInscription): Utilisateur
-    {
-        $this->dateInscription = $dateInscription;
-
+     * Set the value of photo
+     */
+    public function setPhoto(string $photo): Utilisateur {
+        $this->photo = $photo;
         return $this;
     }
+
+
+    
 }
+
+// Ne rien écrire après cette accolade
