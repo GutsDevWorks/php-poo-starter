@@ -88,3 +88,25 @@ Afin de prendre en main la POO, on créer une application simple de prise de not
 
 Grâce à cela, il est plus simple pour nous de comprendre les objectifs de notre application.
 Cela facilitera sa conception dans une approche plus réaliste.
+
+## Rappel sur l'intérêt du Backend
+
+Dans le domaine du web, le backend est utilisé pour la conception complexe.
+Il s'agit de mettre en place des fonctionnalités afin de rendre l'expérience la plus complète possible.
+
+Dans notre exemple, l'application de prise de notes, doit nous permettre de créer, afficher, modifier et supprimer des notes. Cet ensemble d'action s'appelle le 'CRUD' (Create, read, update, delete).
+
+L'intervention d'un langage de programmation est alors indispensable. Il peut aussi y avoir une base de données qui entre en compte. Les bases de données sont appelées 'SGBD' (Système de Gestion de Base de Données).
+
+Le point de départ pour un backend sera principalement uen requête 'HTTP' (GET,POST,PUT,DELETE, etc). Lorsque le serveur reçoit une requête, un script PHP est exécuté afin d'y répondre.
+
+Exemple:
+
+'Martin' demande la page '/contact' à l'adresse 'http://localhost:3000/contact'.
+Le serveur, s'il dispose de cette page, retourne le contenu correspondant. 
+
+'/contact' est ce qu'on appel une route dans le contexte de l'application. Pour le commun des internautes, c'est une URL ou URI. Rien ne se passe si me serveur n'est pas sollicité, il faut l'interpeller pour obtenir un résultat. 
+
+### Le cas exceptionnel
+
+Afin d'exécuter un script PHP sans requête http, nous pouvons utiliser uen tache 'cron' qui lance une commande à notre place de manière automatique et périodique.
